@@ -10,6 +10,9 @@ $(document).ready( function() {
         $(heading).data(id, href);
     });
 
+	$blog_headings.find('a').click( function(default_event) {
+            default_event.preventDefault(); 
+        });
 
     $blog_headings.click( function() {
         $href = $(this).data($(this).attr('id'));

@@ -1,17 +1,13 @@
-class InverseString
 
-	def initialize(str)
-		@str = str
-    end
+require_relative 'string'
 
-    def to_s
-    	@str.swapcase!
-    end
+def swaping_cases
+
+  puts "Enter the string to be altered"
+
+  inverse_object = gets.chomp
+
+  puts inverse_object.to_s
 end
 
-
-puts "Enter the string to be altered"
-
-inverse_object = InverseString.new(gets.chomp)
-
-puts inverse_object
+swaping_cases

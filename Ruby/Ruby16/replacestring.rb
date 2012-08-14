@@ -1,7 +1,7 @@
 class ReplaceString
   def initialize(input_string, pattern)
 	  @input_string = input_string
-	  @pattern = pattern
+	  @pattern = Regexp.new(pattern, true)
   end
 
   def alter_pattern

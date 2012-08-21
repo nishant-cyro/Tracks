@@ -16,12 +16,12 @@ def loop_palindrome
     puts "Enter any key to continue and enter 'q' or 'Q' to quit"
     choice = gets.chomp
  
-      case choice
-        when 'q', 'Q'
-    	    then break
-        else
-		      check_palindrome
-	      end
+    case choice
+      when 'q', 'Q'
+        then break
+      else
+        check_palindrome
+      end
     end
 end
 

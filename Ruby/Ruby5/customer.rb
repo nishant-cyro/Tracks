@@ -4,22 +4,22 @@ class Customer
 
   def initialize(name)
     @name = name
-	  @@ids += 1
-	  @account_no = @@ids
-	  @balance = 1000
+    @@ids += 1
+    @account_no = @@ids
+    @balance = 1000
   end
-
+ 
   def deposit(amount)
-	  @balance += amount
-	  "The new balance is #{@balance}"
+    @balance += amount
+    "The new balance is #{@balance}"
   end
 
   def withdraw(amount)
-	  @balance -= amount
-	  "The new balance is #{@balance}"
+    @balance -= amount
+    "The new balance is #{@balance}"
   end
 
   def to_s
-	  "Account Name : #{@name}, Account Number : #{@account_no}, Balance : #{@balance}"
+    "Account Name : #{@name}, Account Number : #{@account_no}, Balance : #{@balance}"
   end
 end

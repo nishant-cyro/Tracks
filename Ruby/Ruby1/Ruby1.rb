@@ -18,7 +18,7 @@ def count_occurance
   end
 
   occurance.each do |key, value|
-	  puts "#{key} - #{value}"
+    puts "#{key} - #{value}"
   end
 end
 

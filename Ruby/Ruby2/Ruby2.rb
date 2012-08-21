@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/ruby
 
 def fibonaci
@@ -11,7 +9,7 @@ def fibonaci
 
   i = 1
   while numbers[i] < 1000
-	numbers[i+1] = yield numbers[i], numbers[i-1]
+  	numbers[i+1] = yield numbers[i], numbers[i-1]
     i += 1
   end
 

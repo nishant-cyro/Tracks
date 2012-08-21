@@ -9,7 +9,7 @@ def count_occurance
 
   puts answer
 
-  answer.each_char do |char|
+  answer.gsub(/[a-zA-Z]/) do |char|
     if occurance.has_key?(char)
       occurance[char] += 1
     else

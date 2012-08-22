@@ -5,34 +5,34 @@ class AddTime
   attr_reader :flag
 
   def initialize(time)
-	time.each do |selected_time|
+    time.each do |selected_time|
       raise "#{selected_time} is wrongly entered." if wrong_time? selected_time
     end
 
-  @time = Array.new
+    @time = Array.new
 
-  i=0
+    i=0
 
-  time.each do |selected_time|
-    @time[i] = Time.parse selected_time
-    i += 1
-  end
+    time.each do |selected_time|
+      @time[i] = Time.parse selected_time
+      i += 1
+    end
 
-  @day = 0
-  @flag = true
+    @day = 0
+    @flag = true
 
-  rescue Exception => e
-	@flag = false
-	puts e.message
+    rescue Exception => e
+    @flag = false
+    puts e.message
   end
 
   def wrong_time?(time_under_check)
-	regex = /^((([0-1]?[0-9])|([2]?[0-3])):([0-5]?[0-9]):([0-5]?[0-9]))$/
-	if time_under_check.match(regex) == nil
+    regex = /^((([0-1]?[0-9])|([2]?[0-3])):([0-5]?[0-9]):([0-5]?[0-9]))$/
+    if time_under_check.match(regex) == nil
       return true
-	else
-	  return false
-	end
+    else
+      return false
+    end
   end
 
 
@@ -47,8 +47,8 @@ class AddTime
   end
 
   def cal_total_time
-	total_time = Time.parse("0:0:0")
-	@time.each do |selected_time|
+    total_time = Time.parse("0:0:0")
+    @time.each do |selected_time|
       total_time, day = adding_time total_time, selected_time
       @day += day
     end

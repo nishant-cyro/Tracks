@@ -15,17 +15,17 @@ class AddTime
     @flag = true
 
     rescue Exception => e
-	  @flag = false
-	  puts e.message
+    @flag = false
+    puts e.message
   end
 
   def wrong_time?(time_under_check)
     regex = /^((([0-1]?[0-9])|([2]?[0-3])):([0-5]?[0-9]):([0-5]?[0-9]))$/
   
     if time_under_check.match(regex) == nil
-	  return true
+      return true
     else
-	  return false
+      return false
     end
   end
 

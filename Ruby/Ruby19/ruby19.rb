@@ -11,8 +11,8 @@ def adding_time
   ans = gets.chomp
 
   while ans != 'q' && ans != 'Q'
-	time[i] = ans
-	i += 1
+    time[i] = ans
+    i += 1
     puts "Enter the #{i + 1} time"
     ans = gets.chomp
   end

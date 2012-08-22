@@ -7,7 +7,7 @@ class CharacterCount
 
   def counting_characters
     @str.each_char do |character|
-	  case character
+    case character
       when '0'..'9'
         then @counter_array[0] += 1
       when 'a'..'z'

@@ -1,38 +1,31 @@
 class ShoppingList
-	def initialize
-		@list = Hash.new
-	end
+  def initialize
+    @list = Hash.new
+  end
 
-	def create_List
-		quit = 'n'
+  def to_s
+    result = Array.new
+    @list.each { |item, qty|
+      result << "#{item.ljust 15, '.'} #{qty}"
+    }
+    result.join("\n")
+  end
 
-		while quit != 'y' && quit != 'Y' do
-		  puts "Enter the Item Name"
-		  item  = gets.chomp
 
-		  puts "Enter the quantity of that item"
-		  qty = gets.chomp
+  def item
+    yield self
+    if @list.has_key? @item_name
+      @list[@item_name] += @qty.to_i
+    else
+      @list[@item_name] = @qty.to_i
+    end
+  end
 
-		  add_item item, qty
+  def name item_name
+    @item_name = item_name
+  end
 
-		  puts "Do you want to quit (y|n)"
-		  quit = gets.chomp
-	    end
-	    print_list
-	end
-
-	def add_item item, qty
-		if @list.has_key? item
-			@list[item] += qty.to_i
-		else
-			@list[item] = qty.to_i
-		end
-	end
-
-	def print_list
-		puts "Shopping List"
-		@list.each { |item, qty|
-			puts "#{item.ljust 15, '.'} #{qty}"
-		}
-	end
+  def quantity qty
+    @qty = qty
+  end
 end

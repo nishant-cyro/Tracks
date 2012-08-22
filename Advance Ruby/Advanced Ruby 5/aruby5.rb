@@ -5,12 +5,12 @@ def instance_string
   my_new_string = "bye"
 
   def my_string.exclude? word
-   	not self.include? word
+    not self.include? word
   end
 
   class << my_string
     def reverse_line line
-	  line.split.reverse.join " "
+      line.split.reverse.join " "
     end
   end
 

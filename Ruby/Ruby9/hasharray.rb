@@ -1,7 +1,7 @@
 class HashArray
   def initialize(array)
     @hash = Hash[]
-	@array = array
+    @array = array
   end
 
   def make_hash
@@ -12,7 +12,7 @@ class HashArray
       else
         @hash[element.to_s.length] = Array[element]
       end 
-	end
-	puts @hash
+    end
+  puts @hash
   end
 end

@@ -1,27 +1,34 @@
 class HashArray
 
   def initialize(array)
+    @hash = Hash.new
     @array = array
   end
 
   def make_hash
-    @hash = @array.inject({}) do |hash, element|
+    @array.each do |element|
+      if @hash.has_key?(element.size)
+        value_array = @hash.fetch(element.to_s.size)
+        value_array << element
+      else
+        @hash[element.to_s.length] = Array[element]
+      end 
+    end
+  end
 
-  	  if element.to_s.length % 2 == 0
+
+
+  def sort_hash
+    make_hash
+    @hash = @hash.sort.inject({'odd' => [], 'even' => []}) do |hash, (key,value)|
+      if key % 2 == 0
         type = 'even'
-	  else
-	    type = 'odd'
-	  end
-	
-	  if hash[type].nil?
-	    hash[type] = [element]
-	  else
-	    hash[type] += [element]
-	  end
-	
-	  hash
-	
-	end
-	  return @hash
-	end
+      else
+        type = 'odd'
+      end
+      hash[type] << value
+      hash
+    end
+    return @hash
+  end
 end

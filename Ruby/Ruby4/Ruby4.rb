@@ -7,7 +7,7 @@ def check_palindrome
     puts "yes"
   else
     puts "no"
-   end
+  end
 end
 
 def loop_palindrome
@@ -21,8 +21,8 @@ def loop_palindrome
         then break
       else
         check_palindrome
-      end
     end
+  end
 end
 
 loop_palindrome

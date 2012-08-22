@@ -6,7 +6,6 @@ def vowel_replacement
   answer = gets.chomp
   answer.gsub!(pattern, '*')
   puts answer
-
 end
 
 vowel_replacement

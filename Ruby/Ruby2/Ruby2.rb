@@ -1,19 +1,13 @@
-#!/usr/bin/ruby
+require_relative 'fibonaci'
 
-def fibonaci
-
-  numbers = Array.new
-
-  numbers[0] = 0
-  numbers[1] = 1
-
-  i = 1
-  while numbers[i] < 1000
-    numbers[i+1] = yield numbers[i], numbers[i-1]
-    i += 1
-  end
-
-  puts numbers
+def calculating_fibonaci 
+  puts "Enter the limit of fibonaci"
+  limit = gets.chomp
+  fibonaci_series = Fibonaci.new limit
+  fibonaci_series.fibonaci { |cur_number, last_number| cur_number + last_number }
+  fibonaci_series.print_fibonaci
 end
 
-fibonaci { |cur_number, last_number| cur_number + last_number }
+calculating_fibonaci
+
+  

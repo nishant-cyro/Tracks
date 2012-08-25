@@ -1,25 +1,13 @@
 
-def count_occurance
+require_relative 'occurance'
 
-  puts "Enter a string"
+def counting_occurance
+  puts "Enter the string"
+  input_string = gets.chomp
 
-  answer = gets.chomp
-
-  occurance = Hash.new
-
-  puts answer
-
-  answer.gsub(/[a-zA-Z]/) do |char|
-    if occurance.has_key?(char)
-      occurance[char] += 1
-    else
-      occurance[char] = 1
-    end
-  end
-
-  occurance.each do |key, value|
-    puts "#{key} - #{value}"
-  end
+  occurrance_object = CharacterOccurance.new input_string
+  occurrance_object.count_occurance
+  occurrance_object.print_occurance
 end
 
-count_occurance
+counting_occurance

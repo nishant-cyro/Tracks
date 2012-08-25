@@ -1,28 +1,25 @@
 
-def check_palindrome
-  puts "Enter a string"
-  answer = gets.chomp
-
-  if answer.eql?(answer.reverse)
-    puts "yes"
+def check_palindrome input_string
+  
+  if input_string.downcase.eql?(input_string.downcase.reverse)
+    puts "Yes, it's a palindrome"
   else
-    puts "no"
+    puts "No, it's not a palindrome"
   end
 end
 
-def loop_palindrome
+def ask_palindrome
+  loop do
+    puts "Enter a string or enter 'q/Q' to quit"
+    input_string  = gets.chomp
 
-  loop do 
-    puts "Enter any key to continue and enter 'q' or 'Q' to quit"
-    choice = gets.chomp
- 
-    case choice
+    case input_string
       when 'q', 'Q'
         then break
       else
-        check_palindrome
+        check_palindrome input_string
     end
   end
 end
 
-loop_palindrome
+ask_palindrome

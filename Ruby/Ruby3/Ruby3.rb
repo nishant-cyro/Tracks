@@ -1,11 +1,11 @@
-def vowel_replacement
+require_relative 'vowel_replacement'
 
-  pattern = /[aieouAEIOU]/
+def vowel_replaced
   puts "Enter a string to be altered"
-
-  answer = gets.chomp
-  answer.gsub!(pattern, '*')
-  puts answer
+  input_string = gets.chomp
+  
+  vowel_replacement = VowelReplacement.new input_string
+  puts vowel_replacement.replacing_vowels
 end
 
-vowel_replacement
+vowel_replaced

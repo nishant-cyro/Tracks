@@ -2,11 +2,11 @@ class Customer
 
   @@ids = 0
 
-  def initialize(name)
+  def initialize name, balance = 1000
     @name = name
     @@ids += 1
     @account_no = @@ids
-    @balance = 1000
+    @balance = balance
   end
  
   def deposit(amount)

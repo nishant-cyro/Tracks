@@ -1,3 +1,4 @@
+
 class CharacterOccurance
   def initialize input_string
     @input_string = input_string

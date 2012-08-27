@@ -1,7 +1,7 @@
 class Array
 
-  def calPower(power)
-    @array.collect! do |element|
+  def cal_power(power)
+    self.collect do |element|
       element **=  power
       element
     end
